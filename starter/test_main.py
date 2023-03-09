@@ -31,7 +31,7 @@ def test_api_locally_post_class_higher_income():
                       "native-country": "United-States"
                     }
 
-    r = client.post("/income_prediction", json=higher_example)
+    r = client.post("/income_prediction/", json=higher_example)
     assert r.status_code == 200
     assert r.json() == "Income will be probably higher than $50k"
 
@@ -54,6 +54,6 @@ def test_api_locally_post_class_lower_income():
                       "native-country": "United-States"
                     }
 
-    r = client.post("/income_prediction", json=higher_example)
+    r = client.post("/income_prediction/", json=higher_example)
     assert r.status_code == 200
     assert r.json() == "Income will be probably lower than $50k"
