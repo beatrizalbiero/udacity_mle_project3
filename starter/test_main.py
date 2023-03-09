@@ -11,7 +11,7 @@ client = TestClient(app)
 def test_api_locally_get_root():
     r = client.get("/")
     assert r.status_code == 200
-    assert r.json() == "Hello World"
+    assert r.json() == {"greeting": "Hello World!"}
 
 
 def test_api_locally_post_class_higher_income():
