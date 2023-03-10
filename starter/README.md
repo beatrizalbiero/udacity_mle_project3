@@ -94,3 +94,7 @@ example = {
 
   ### Tests
   This model gets tested in the file ```starter/starter/ml/unit_tests.py```.
+
+
+  ## Continuous deployment
+  The current build is available [here](https://github.com/beatrizalbiero/udacity_mle_project3/actions/runs/4386885863/jobs/7681500625) and a screenshot of the 6 tests is available in the folder ```starter/screenshots/```
