@@ -28,6 +28,9 @@ X_test, y_test, encoder, lb = process_data(
 # Train and save a model.
 clf = model.train_model(X_train, y_train)
 y_test_pred = model.inference(clf, X_test)
+precision, recall, fbeta = compute_model_metrics(y_test, y_test_pred)
+with open('model_metrics.txt', 'w') as f:
+    f.write('Precision: {}, fbeta: {}, recall: {} \n'.format(precision, fbeta, recall))
 
 # Save model
 pickle.dump(clf, open('ml/clf_model.sav', 'wb'))

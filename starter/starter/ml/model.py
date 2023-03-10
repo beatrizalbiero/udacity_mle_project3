@@ -15,8 +15,6 @@ cat_features = [
     "native-country",
 ]
 
-# Optional: implement hyperparameter tuning.
-
 
 def train_model(X_train, y_train):
     """
@@ -127,7 +125,7 @@ def compute_model_metrics_slices(y, preds, data, features=cat_features):
 
                 f.write(
                     'Feature {}, precision: {}, fbeta: {}, recall: {} \n'.format(
-                        feature, fbeta, precision, recall))
+                        feature, precision, fbeta, recall))
 
 
 def inference(model, X):
@@ -148,7 +146,7 @@ def inference(model, X):
     return preds
 
 
-def model_load():
+def model_load(path='starter/ml/clf_model.sav'):
     """Loads saved model.
     """
-    return pickle.load(open('starter/ml/clf_model.sav', 'rb'))
+    return pickle.load(open(path, 'rb'))
